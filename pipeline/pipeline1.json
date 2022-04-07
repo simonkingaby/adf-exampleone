@@ -1,0 +1,404 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "year",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "year",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "month",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "month",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "off_age_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "off_age_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "off_age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "off_age",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "off_ethnicity_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "off_ethnicity_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "off_sex",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "off_sex",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "off_race",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "off_race",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "incident_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "incident_date",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "incident_hour",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "incident_hour",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "offense_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "offense_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "crime_against",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "crime_against",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "offense_category_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "offense_category_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "suspect_using_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "suspect_using_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "weapon_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "weapon_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "state",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "state",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_type_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_type_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_age",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_age_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_age_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_race",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_race",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_sex",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_sex",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_ethnicity_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_ethnicity_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "off_vic_relationship_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "off_vic_relationship_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_circumstances_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_circumstances_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_injury_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_injury_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "victim_justifiable_force_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "victim_justifiable_force_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "location_type_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "location_type_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "criminal_act_type_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "criminal_act_type_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "bias_type_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "bias_type_name",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-04-07T10:27:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

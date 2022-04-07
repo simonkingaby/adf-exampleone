@@ -1,0 +1,9 @@
+{
+	"name": "DataFactorySKOne",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f9bcbec4-2a18-4d77-97f5-b8ef8ca5ba77",
+		"tenantId": "36da45f1-dd2c-4d1f-af13-5abe46b99921"
+	}
+}
